@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+// 이 밑으로 페이지 import 해주시면 됩니다.
+
 Vue.use(VueRouter)
 
 const routes = [
