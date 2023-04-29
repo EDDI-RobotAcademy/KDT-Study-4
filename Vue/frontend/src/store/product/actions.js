@@ -8,9 +8,11 @@ import axiosInst from '@/utility/axiosInst'
 export default {
 
     requestProductToSpring ({ commit }, productId) {
+        console.log(", productId: " + productId)
+
         return axiosInst.get(`/jpa-product/${productId}`)
             .then((res) => {
-                commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data)
+                commit(REQUEST_PRODUCT_TO_SPRING, res.data)
             })
     },
     
@@ -45,13 +47,13 @@ export default {
                 })
     },
     
-    requestDeleteproductToSpring ({}, productId) {
+    requestDeleteProductSpring ({}, productId) {
         return axiosInst.delete(`/jpa-product/${productId}`)
             .then((res) => {
-                alert('삭제 성공!')
+                alert('삭제 완료')
             })
             .catch(() => {
-                alert('문제 발생!')
+                alert('문제 발생')
             })
     },
 }
