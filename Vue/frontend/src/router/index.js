@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductRegisterPage from '@/views/product/ProductRegisterPage.vue'
+import ProductListPage from '@/views/product/ProductListPage.vue'
 // 이 밑으로 페이지 import 해주시면 됩니다.
 
 Vue.use(VueRouter)
@@ -21,10 +22,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
+    path: '/product-list-page',
+    name: 'ProductListPage',
+    component: ProductListPage
+  },
+  {
     path: '/product-register-page',
     name: 'ProductRegisterPage',
     component: ProductRegisterPage
-  }
+  },
 ]
 
 const router = new VueRouter({

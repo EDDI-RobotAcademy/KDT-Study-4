@@ -6,6 +6,21 @@ import {
 import axiosInst from '@/utility/axiosInst'
 
 export default {
+
+    requestProductToSpring ({ commit }, productId) {
+        return axiosInst.get(`/jpa-product/${productId}`)
+            .then((res) => {
+                commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data)
+            })
+    },
+    
+    requestProductListToSpring ({ commit }) {
+        return axiosInst.get('/jpa-product/list')
+            .then((res) => {
+                commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data)
+            })
+    },
+
     requestProductCategoryToSpring({commit}, categoryId){
         return axiosInst.get(`/jpa-product/${categoryId}`)
             .then((res)=>{
@@ -28,5 +43,15 @@ export default {
                 .catch(() => {
                     alert('문제 발생!')
                 })
-      },
+    },
+    
+    requestDeleteproductToSpring ({}, productId) {
+        return axiosInst.delete(`/jpa-product/${productId}`)
+            .then((res) => {
+                alert('삭제 성공!')
+            })
+            .catch(() => {
+                alert('문제 발생!')
+            })
+    },
 }
