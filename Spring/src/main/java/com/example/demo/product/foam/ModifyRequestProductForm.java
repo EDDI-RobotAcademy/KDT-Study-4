@@ -8,7 +8,7 @@ import lombok.ToString;
 @Getter
 @ToString
 @RequiredArgsConstructor
-public class RequestProductForm {
+public class ModifyRequestProductForm {
 
     private String productName;
     private Integer productPrice;
