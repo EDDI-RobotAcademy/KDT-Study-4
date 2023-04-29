@@ -1,7 +1,7 @@
 package com.example.demo.product.controller;
 
 import com.example.demo.product.entity.JpaProduct;
-import com.example.demo.product.foam.RequestProductForm;
+import com.example.demo.product.foam.ModifyRequestProductForm;
 import com.example.demo.product.service.JpaProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +37,13 @@ public class JpaProductController {
         List<JpaProduct> returFinedProductList= productService.find(categoryId);
         log.info("categoryId: " + categoryId);
         return returFinedProductList;
+    }
+    @PutMapping("/{productId}")
+    public JpaProduct modifyProduct (@PathVariable("productId") Long productId,
+                                 @RequestBody ModifyRequestProductForm modifyRequestProductForm) {
+        log.info("modifyBoard(): " + modifyRequestProductForm + ", id: " + productId);
+
+        return productService.modify(productId, modifyRequestProductForm);
     }
 
 }

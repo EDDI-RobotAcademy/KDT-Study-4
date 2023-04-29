@@ -1,7 +1,8 @@
 package com.example.demo.product.service;
 
 import com.example.demo.product.entity.JpaProduct;
-import com.example.demo.product.repogitory.JpaProductRepository;
+import com.example.demo.product.foam.ModifyRequestProductForm;
+import com.example.demo.product.repository.JpaProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
@@ -42,6 +43,22 @@ public class JpaProductServiceImpl implements JpaProductService{
     public List<JpaProduct> find(String categoryId){
           return productRepository.findByCategoryIdLike(categoryId);
 
+    }
+
+    @Override
+    public JpaProduct modify(Long productId, ModifyRequestProductForm modifyRequestProductForm) {
+        Optional<JpaProduct> maybeJpaProduct = productRepository.findById(productId);
+
+        if (maybeJpaProduct.isEmpty()) {
+            log.info("정보가 없습니다!");
+            return null;
+        }
+
+        JpaProduct product = maybeJpaProduct.get();
+        product.setProductName(modifyRequestProductForm.getProductName());
+        product.setProductDetails(modifyRequestProductForm.getProductDetails());
+
+        return productRepository.save(product);
     }
 
 }

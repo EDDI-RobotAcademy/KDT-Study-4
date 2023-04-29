@@ -3,13 +3,16 @@ package com.example.demo.product.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -20,13 +23,23 @@ public class JpaProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
-    
+
+    @Setter
     private String productName;
+
+    @Setter
     private Integer productPrice;
+
     private String manufacturer;
+
+    @Setter
     private String mfgDate;
+
+    @Setter
     private String expDate;
     private String categoryId;
+
+    @Setter
     private String productDetails;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
@@ -35,8 +48,8 @@ public class JpaProduct {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
     @UpdateTimestamp
-    private LocalDateTime updateDate;
-    
+    private LocalDateTime  updateDate;
+
     public JpaProduct(
             String productName,
             Integer productPrice,

@@ -56,4 +56,17 @@ export default {
                 alert('문제 발생')
             })
     },
+
+    requestBoardModifyToSpring ({}, payload) {
+        const { productId, productName, productPrice, mfgDate, expDate, productDetails } = payload
+
+        return axiosInst.put(`/jpa-product/${productId}`, 
+        { productName, productPrice, mfgDate, expDate, productDetails })
+            .then((res) => {
+                alert("수정 성공!")
+            })
+            .catch(() => {
+                alert('문제 발생!')
+            })
+    },
 }

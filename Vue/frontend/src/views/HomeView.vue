@@ -7,7 +7,6 @@
 
         <!-- 이 밑으로 페이지 추가 해주시면 됩니다. -->
         <router-link to="/product-list-page">제품 목록</router-link> |
-        <router-link to="/product-register-page">상품등록</router-link> |
       </nav>
     </div>
   </v-container>
