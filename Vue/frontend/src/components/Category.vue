@@ -26,9 +26,9 @@ export default {
       category: "0",
       selectList:[
         {name: "카테고리", value: "0"},
-        {name: "cook1", value: "1"},
-        {name: "cook2", value: "2"},
-        {name: "cook3", value: "3"},
+        {name: "cook1", value: "10"},
+        {name: "cook2", value: "20"},
+        {name: "cook3", value: "30"},
       ]
     }
   },

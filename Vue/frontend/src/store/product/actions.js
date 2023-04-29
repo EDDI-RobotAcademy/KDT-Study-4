@@ -6,10 +6,11 @@ import {
 import axiosInst from '@/utility/axiosInst'
 
 export default {
-    requestProductCategoryToSpring({commit}, CategoryId){
-        return axiosInst.get('/jpa-product/CategoryId', CategoryId)
+    requestProductCategoryToSpring({commit},categoryId){
+        return axiosInst.get(`/jpa-product/${categoryId}`)
             .then((res)=>{
                 commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data)
+                console.log(res.data)
             })
 
     }
