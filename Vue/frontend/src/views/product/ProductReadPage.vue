@@ -1,15 +1,22 @@
 <template>
-    <div>
-        <h2>상품목록</h2>
-        <product-read-form v-if="product" :product="product"/>
-        <p v-else>기다려주세요.</p>
-        <router-link :to="{ name: 'ProductModiftyPage', params: { productId } }">
-            수정
-        </router-link>
-        <button @click="onDelete">삭제</button>
-        <router-link :to="{ name: 'ProductListPage' }">
-            홈으로
-        </router-link>
+    <div style="text-align: center;">
+        <div :style="{ marginTop: '50px' , marginBottom: '50px'}">
+            <h2>제품 상세페이지</h2>
+        </div>
+        <div style="text-align: center;">
+            <product-read-form v-if="product" :product="product"/>
+            <p v-else>기다려주세요.</p>
+        </div>
+        <p></p>
+        <div style="text-align: right;">
+            <router-link :to="{ name: 'ProductModiftyPage', params: { productId } }">
+                <v-btn color="gray" dark style="margin: 0px 5px 0px 0px;">수정</v-btn>
+            </router-link>
+            <router-link :to="{ name: 'ProductListPage' }">
+                <v-btn color="gray" dark style="margin: 0px 5px 0px 0px;">목록</v-btn>
+            </router-link>
+            <v-btn color="red" dark @click="onDelete">삭제</v-btn>
+        </div>
     </div>
 </template>
 
@@ -48,5 +55,5 @@ export default {
 </script>
 
 <style>
-
+  
 </style>
