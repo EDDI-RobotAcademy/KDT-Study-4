@@ -6,7 +6,7 @@ import HomeView from '../views/HomeView.vue'
 import ProductRegisterPage from '@/views/product/ProductRegisterPage.vue'
 import ProductListPage from '@/views/product/ProductListPage.vue'
 import ProductModifyPage from '@/views/product/ProductModifyPage.vue'
-
+import ProductReadPage from '@/views/product/ProductReadPage.vue'
 
 Vue.use(VueRouter)
 
@@ -43,6 +43,9 @@ const routes = [
     props: {
       default: true
     },
+    path: '/product-read-page',
+    name: 'ProductReadPage',
+    component: ProductReadPage
   },
 ]
 
