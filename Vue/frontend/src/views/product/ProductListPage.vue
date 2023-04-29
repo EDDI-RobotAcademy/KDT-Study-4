@@ -22,7 +22,7 @@ export default {
         ...mapState(productModule, ['products']),
     },
     mounted () {
-        this.requestProductListFrom()
+        this.requestProductListToSpring()
     },
     methods: {
         ...mapActions(
