@@ -9,10 +9,13 @@ import lombok.ToString;
 @ToString
 @RequiredArgsConstructor
 public class RequestProductForm {
-    final private String categoryId;
-    final private Long productId;
 
+    private String productName;
+    private Integer productPrice;
+    private String mfgDate;
+    private String expDate;
+    private String productDetails;
     public JpaProduct toJPaProduct(){
-        return new JpaProduct(categoryId);
+        return new JpaProduct(productName, productPrice, mfgDate, expDate, productDetails);
     }
 }

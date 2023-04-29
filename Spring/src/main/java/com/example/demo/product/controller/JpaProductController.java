@@ -23,6 +23,12 @@ public class JpaProductController {
         log.info("categoryId: " + categoryId);
         return returFinedProductList;
     }
+    @PutMapping("/{productId}")
+    public JpaProduct modifyProduct (@PathVariable("productId") Long productId,
+                                 @RequestBody RequestProductForm requestProductForm) {
+        log.info("modifyBoard(): " + requestProductForm + ", id: " + productId);
 
+        return productService.modify(productId, requestProductForm);
+    }
 
 }
