@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+
+// 이 밑으로 페이지 import 해주시면 됩니다.
 import ProductRegisterPage from '@/views/product/ProductRegisterPage.vue'
 import ProductListPage from '@/views/product/ProductListPage.vue'
-// 이 밑으로 페이지 import 해주시면 됩니다.
+import ProductModifyPage from '@/views/product/ProductModifyPage.vue'
+
 
 Vue.use(VueRouter)
 
@@ -30,6 +33,16 @@ const routes = [
     path: '/product-register-page',
     name: 'ProductRegisterPage',
     component: ProductRegisterPage
+  },
+  {
+    path: '/product-modify-page/:productId',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true
+    },
   },
 ]
 
