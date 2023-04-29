@@ -22,14 +22,14 @@
                     <<router-link :to="{
                         name: 'ProductReadPage',
                         paramas:  { productId: product.productId.toString() }}">
-                            {{ product.title }}
+                            {{ product.productName }}
                     </router-link>
                 </td>
                 <td align="center">
-                    {{ product.writer }}
+                    {{ product.productPrice }}
                 </td>
                 <td align="center">
-                    {{ product.createDate }}
+                    {{ product.manufacturer }}
                 </td>
             </tr>
         </table>
