@@ -57,7 +57,7 @@ export default {
             })
     },
 
-    requestBoardModifyToSpring ({}, payload) {
+    requestProductModifyToSpring ({}, payload) {
         const { productId, productName, productPrice, mfgDate, expDate, productDetails } = payload
 
         return axiosInst.put(`/jpa-product/${productId}`, 

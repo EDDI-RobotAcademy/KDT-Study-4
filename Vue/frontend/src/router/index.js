@@ -43,9 +43,16 @@ const routes = [
     props: {
       default: true
     },
-    path: '/product-read-page',
+  },
+  {
+    path: '/product-read-page/:productId',
     name: 'ProductReadPage',
-    component: ProductReadPage
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    },
   },
 ]
 

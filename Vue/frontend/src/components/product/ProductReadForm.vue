@@ -25,7 +25,7 @@
                     <td>상품정보</td>
                     <td>
                         <div style="margin-top: 10px;"></div>
-                        <textarea cols="80" rows="10" v-model="product.productDetails" readonly/>
+                        <textarea cols="80" rows="10" :value="product.productDetails" readonly/>
                     </td>
                 </tr>
             </tbody>

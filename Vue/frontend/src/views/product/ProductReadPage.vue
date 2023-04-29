@@ -9,7 +9,7 @@
         </div>
         <p></p>
         <div style="text-align: right;">
-            <router-link :to="{ name: 'ProductModiftyPage', params: { productId } }">
+            <router-link :to="{ name: 'ProductModifyPage', params: { productId } }">
                 <v-btn color="gray" dark style="margin: 0px 5px 0px 0px;">수정</v-btn>
             </router-link>
             <router-link :to="{ name: 'ProductListPage' }">
