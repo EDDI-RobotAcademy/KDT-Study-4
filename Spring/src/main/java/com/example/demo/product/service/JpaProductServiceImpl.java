@@ -37,4 +37,11 @@ public class JpaProductServiceImpl implements JpaProductService{
     public void delete(Long productId) {
         productRepository.deleteById(productId);
     }
+    
+    @Override
+    public List<JpaProduct> find(String categoryId){
+          return productRepository.findByCategoryIdLike(categoryId);
+
+    }
+
 }

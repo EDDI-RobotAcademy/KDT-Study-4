@@ -6,8 +6,10 @@ import java.util.List;
 
 public interface JpaProductService {
 
-    List<JpaProduct> list();
+    //List<JpaProduct> find(String categoryId, RequestProductFoam requestProductFoam);
 
+    List<JpaProduct> find(String categoryId);
+    
     JpaProduct read(Long productId);
 
     void delete(Long productId);
