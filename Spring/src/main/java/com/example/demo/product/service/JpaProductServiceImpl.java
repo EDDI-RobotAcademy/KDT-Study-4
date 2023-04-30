@@ -1,8 +1,10 @@
 package com.example.demo.product.service;
 
+import com.example.demo.product.entity.JpaRegisterProduct;
 import com.example.demo.product.entity.JpaProduct;
 import com.example.demo.product.foam.ModifyRequestProductForm;
 import com.example.demo.product.repository.JpaProductRepository;
+import com.example.demo.product.repository.JpaRegisterProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
@@ -17,6 +19,7 @@ import java.util.Optional;
 public class JpaProductServiceImpl implements JpaProductService{
 
     final private JpaProductRepository productRepository;
+    final private JpaRegisterProductRepository registerProductRepository;
 
     @Override
     public List<JpaProduct> list() {
@@ -59,6 +62,11 @@ public class JpaProductServiceImpl implements JpaProductService{
         product.setProductDetails(modifyRequestProductForm.getProductDetails());
 
         return productRepository.save(product);
+    }
+
+    @Override
+    public JpaRegisterProduct register(JpaRegisterProduct jpaRegisterProduct) {
+        return registerProductRepository.save(jpaRegisterProduct);
     }
 
 }
