@@ -1,7 +1,7 @@
 <template>
     <div style="text-align: center;">
         <div :style="{ marginTop: '50px' , marginBottom: '50px'}">
-            <h2>제품 상세페이지</h2>
+            <h2>상품 상세페이지</h2>
         </div>
         <div class="centered" style="text-align: center;">
             <product-read-form v-if="product" :product="product"/>
@@ -56,7 +56,7 @@ export default {
 
 <style>
     .centered {
-         display: flex;
+        display: flex;
         justify-content: center;
         align-items: center;
     }

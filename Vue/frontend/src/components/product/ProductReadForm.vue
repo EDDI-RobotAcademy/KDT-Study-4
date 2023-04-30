@@ -49,7 +49,7 @@
                 <tr>    
                     <td>카테고리:</td>
                     <td>
-                        <input type="text" :value="product.categoryName" readonly/>
+                        <input type="text" :value="product.categoryId" readonly/>
                     </td>
                     <td>등록일자:</td>
                     <td>
