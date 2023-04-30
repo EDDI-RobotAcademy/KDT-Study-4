@@ -6,6 +6,7 @@
                 제품 등록
             </router-link>
         </div>
+        <category/>
         <product-list-form :products="products"/>
     </div>
 </template>
@@ -13,11 +14,12 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import ProductListForm from '@/components/product/ProductListForm.vue'
-
+import Category from '@/components/Category.vue';
 const productModule = 'productModule'
 
 export default {
-    components: { ProductListForm },
+    components: { ProductListForm,
+    Category },
     computed: {
         ...mapState(productModule, ['products']),
     },
