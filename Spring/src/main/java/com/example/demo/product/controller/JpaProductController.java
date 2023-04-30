@@ -1,7 +1,9 @@
 package com.example.demo.product.controller;
 
 import com.example.demo.product.entity.JpaProduct;
+import com.example.demo.product.entity.JpaRegisterProduct;
 import com.example.demo.product.foam.ModifyRequestProductForm;
+import com.example.demo.product.foam.RegisterRequestProductForm;
 import com.example.demo.product.service.JpaProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -52,6 +54,13 @@ public class JpaProductController {
         log.info("modifyBoard(): " + modifyRequestProductForm + ", id: " + productId);
 
         return productService.modify(productId, modifyRequestProductForm);
+    }
+
+    @PostMapping("/register")
+    public JpaRegisterProduct registerProduct (@RequestBody RegisterRequestProductForm registerRequestProductForm) {
+        log.info("registerProduct()");
+
+        return productService.register (registerRequestProductForm.toJPaProduct());
     }
 
 }
