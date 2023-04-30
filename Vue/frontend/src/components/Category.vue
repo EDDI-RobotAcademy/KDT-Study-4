@@ -27,8 +27,8 @@ export default {
       selectList:[
         {name: "카테고리", value: "all"},
         {name: "cook1", value: "cook1"},
-        {name: "cook2", value: "20"},
-        {name: "cook3", value: "30"},
+        {name: "cook2", value: "cook2"},
+        {name: "cook3", value: "cook3"},
       ]
     }
   },
@@ -54,7 +54,7 @@ export default {
   width: 150px;
   height: 35px;
   background-size: 20px;
-  padding: 5px 30px 5px 10px;
+  padding: 5px 30px 5px 22px;
   border-radius: 4px;
   outline: 0 none;
 }
