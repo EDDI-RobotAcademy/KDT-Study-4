@@ -20,6 +20,14 @@ public class JpaProductController {
 
     final private JpaProductService productService;
 
+    @GetMapping("/list")
+    public List<JpaProduct> productList(){
+        log.info("productList()");
+        List<JpaProduct> returnedProductList = productService.list();
+        log.info("returnedProductList: " + returnedProductList);
+        return returnedProductList;
+    }
+
     @GetMapping("/{productId}")
     public JpaProduct readProduct (@PathVariable("productId") Long productId) {
         log.info("readProduct()");
@@ -34,7 +42,7 @@ public class JpaProductController {
         productService.delete(productId);
     }
 
-    @GetMapping("/{categoryId}")
+    @GetMapping("/category/{categoryId}")
     public List<JpaProduct> productCategoryList(@PathVariable("categoryId") String categoryId){
         List<JpaProduct> returFinedProductList= productService.find(categoryId);
         log.info("categoryId: " + categoryId);

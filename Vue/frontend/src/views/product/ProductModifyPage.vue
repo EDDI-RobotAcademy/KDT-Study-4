@@ -1,15 +1,19 @@
 <template lang="">
     <div>
-        <h2>상품 정보 수정</h2>
+        <h2>상품수정
+            <span>* 필수항목</span>
+        </h2>
         <product-modify-form v-if="product" :product="product" @submit="onSubmit"/>
-        <p v-else>로딩중 .......</p>
+        <p v-else>로딩중 ......</p>
     </div>
 </template>
 
 <script>
 import ProductModifyForm from '@/components/product/ProductModifyForm.vue';
 import { mapActions, mapState } from 'vuex';
+
 const productModule = 'productModule'
+
 export default {
     components: {
         ProductModifyForm,
@@ -39,13 +43,20 @@ export default {
             })
         }
     },
-    
     created () {
         this.requestProductToSpring(this.productId)
     }
 }
 </script>
 
-<style lang="">
-    
+<style scoped>
+    h2 {
+        padding: 20px;
+        font-weight: 400;
+        padding-left: 30px;
+    }
+    span {
+        font-size: 14px;
+        color: red;
+    }
 </style>

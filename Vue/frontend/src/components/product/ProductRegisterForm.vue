@@ -11,7 +11,7 @@
                 <tr>
                     <td>상품 가격</td>
                     <td>
-                        <input type="text"v-model="productPrice">
+                        <input type="text" v-model="productPrice">
                     </td>
                 </tr>
                 <tr>
@@ -28,8 +28,7 @@
                 <tr>
                     <td>유통기한</td>
                     <td>
-                        <input style="width:150px; height:30px;" type="text" v-model = "expDate"> ~
-                        <input style="width:150px; height:30px;" type="text" v-model = "expDate">
+                        <input type="text" v-model = "expDate">
                     </td>                 
                 </tr>
                 <tr>

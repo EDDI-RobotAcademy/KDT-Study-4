@@ -3,49 +3,60 @@
         <form @submit.prevent="onSubmit">
             <table>
                 <tr>
-                    <td>상품 번호</td>
+                    <td class="productForm">상품 번호</td>
                     <td>
-                        <input type="text" :value="product.productId" disabled/>
+                        <input type="text" class="inputValueProductId":value="product.productId" disabled/>
                     </td>
                 </tr>
                 <tr>
-                    <td>상품명</td>
+                    <td class="productForm">상품명
+                        <span>*</span>
+                    </td>
                     <td>
-                        <input type="text" v-model="productName"/>
+                        <input type="text" class="inputValue" v-model="productName"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>상품 가격</td>
+                    <td class="productForm">상품 가격
+                        <span>*</span>
+                    </td>
                     <td>
-                        <input type="number" v-model="productPrice"/>
+                        <input type="number" class="inputValue" v-model="productPrice"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>제조일자</td>
+                    <td class="productForm">제조일자
+                        <span>*</span>
+                    </td>
                     <td>
-                        <input type="text" v-model="mfgDate"/>
+                        <input type="date" class="inputValue" v-model="mfgDate"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>유통기한</td>
+                    <td class="productForm">유통기한
+                        <span>*</span>
+                    </td>
                     <td>
-                        <input type="text" v-model="expDate"/>
+                        <input type="date" class="inputValue" v-model="expDate"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>상품 정보</td>
+                    <td class="productForm">상품 정보
+                        <span>*</span>
+                    </td>
                     <td>
-                        <textarea cols="70" rows="25" v-model="productDetails"/>
+                        <textarea cols="70" rows="18" v-model="productDetails"/>
                     </td>
                 </tr>
             </table>
 
-            <div>
-                <button type="submit">수정 완료</button>
+            <div class="modifySubmit">
+                <v-btn type="submit" color="blue" style="margin: 0px 10px 0px 0px; color: white;">수정하기</v-btn>
                 <router-link :to="{ 
                     name: 'ProductReadPage', 
                     params: { productId: product.productId.toString() }
-                }">수정 취소</router-link>
+                }"><v-btn>취소</v-btn>
+                </router-link>
             </div>
         </form>
     </div>
@@ -85,6 +96,47 @@ export default {
 }
 </script>
 
-<style lang="">
-    
+<style scoped>
+    td.productForm {
+        width: 150px;
+        font-weight: 400;
+    }
+    input.inputValue, input.inputValueProductId {
+        color: gray;
+        border-color: lightgray;
+        width: 50%;
+        padding-left: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-weight: 300;
+    }
+    input.inputValueProductId {
+        background-color: rgb(240, 240, 240);
+        width: 50%;
+    }
+    table {
+        margin-left: 30px;
+    }
+    tr {
+        height: 50px;
+    }
+    div.modifySubmit {
+        margin-left: 280px;
+        padding: 30px;
+    }
+    textarea {
+        margin-top: 10px;
+        color: gray;
+        border-style: solid;
+        border-color: lightgray;
+        padding-left: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        resize: none;
+    }
+    span {
+        color: rgb(170, 0, 0);
+        font-size: 14px;
+        margin-left: 3px;
+    }
 </style>
