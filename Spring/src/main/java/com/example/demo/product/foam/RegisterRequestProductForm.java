@@ -1,6 +1,6 @@
 package com.example.demo.product.foam;
 
-import com.example.demo.product.entity.JpaRegisterProduct;
+import com.example.demo.product.entity.JpaProduct;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -17,8 +17,8 @@ public class RegisterRequestProductForm {
     private String categoryId;
     private String productDetails;
 
-    public JpaRegisterProduct toJPaProduct() {
-        return new JpaRegisterProduct(productName, productPrice, manufacturer, mfgDate, expDate, categoryId, productDetails
+    public JpaProduct toJPaProduct() {
+        return new JpaProduct(productName, productPrice, manufacturer, mfgDate, expDate, categoryId, productDetails
         );
     }
 }
