@@ -1,9 +1,8 @@
-<template lang="">
+<template>
     <div>
-        <h2>제품 목록</h2>
         <div style="text-align: left; margin: 20px;">
             <router-link :to="{ name: 'ProductRegisterPage'}">
-                제품 등록
+                <v-btn color="primary" dark style="margin: 0px 5px 0px 0px;">상품 등록</v-btn>
             </router-link>
         </div>
         <category/>
@@ -34,6 +33,6 @@ export default {
 }
 </script>
 
-<style lang="">
+<style>
 
 </style>
