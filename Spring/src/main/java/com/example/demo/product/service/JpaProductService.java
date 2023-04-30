@@ -1,14 +1,11 @@
 package com.example.demo.product.service;
 
 import com.example.demo.product.entity.JpaProduct;
-import com.example.demo.product.entity.JpaRegisterProduct;
 import com.example.demo.product.foam.ModifyRequestProductForm;
 
 import java.util.List;
 
 public interface JpaProductService {
-
-    //List<JpaProduct> find(String categoryId, RequestProductFoam requestProductFoam);
 
     List<JpaProduct> find(String categoryId);
 
@@ -19,5 +16,5 @@ public interface JpaProductService {
     void delete(Long productId);
 
     JpaProduct modify(Long productId, ModifyRequestProductForm modifyRequestProductForm);
-    JpaRegisterProduct register(JpaRegisterProduct jpaRegisterProduct);
+    JpaProduct register(JpaProduct jpaRegisterProduct);
 }

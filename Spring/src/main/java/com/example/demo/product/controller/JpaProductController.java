@@ -1,7 +1,6 @@
 package com.example.demo.product.controller;
 
 import com.example.demo.product.entity.JpaProduct;
-import com.example.demo.product.entity.JpaRegisterProduct;
 import com.example.demo.product.foam.ModifyRequestProductForm;
 import com.example.demo.product.foam.RegisterRequestProductForm;
 import com.example.demo.product.service.JpaProductService;
@@ -57,10 +56,10 @@ public class JpaProductController {
     }
 
     @PostMapping("/register")
-    public JpaRegisterProduct registerProduct (@RequestBody RegisterRequestProductForm registerRequestProductForm) {
+    public JpaProduct registerProduct (@RequestBody RegisterRequestProductForm registerRequestProductForm) {
         log.info("registerProduct()");
 
-        return productService.register (registerRequestProductForm.toJPaProduct());
+        return productService.register(registerRequestProductForm.toJPaProduct());
     }
 
 }

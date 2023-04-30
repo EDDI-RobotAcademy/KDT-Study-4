@@ -26,7 +26,7 @@ public class JpaProduct {
 
     @Setter
     private String productName;
-    //...
+
     @Setter
     private Integer productPrice;
 
@@ -60,6 +60,22 @@ public class JpaProduct {
         this.productPrice = productPrice;
         this.mfgDate = mfgDate;
         this.expDate = expDate;
+        this.productDetails = productDetails;
+    }
+
+    public JpaProduct(String productName,
+                      Integer productPrice,
+                      String manufacturer,
+                      String mfgDate,
+                      String expDate,
+                      String categoryId,
+                      String productDetails) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.manufacturer = manufacturer;
+        this.mfgDate = mfgDate;
+        this.expDate = expDate;
+        this.categoryId = categoryId;
         this.productDetails = productDetails;
     }
 }
