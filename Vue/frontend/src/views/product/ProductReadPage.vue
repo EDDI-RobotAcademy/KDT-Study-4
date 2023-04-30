@@ -3,13 +3,13 @@
         <div :style="{ marginTop: '50px' , marginBottom: '50px'}">
             <h2>제품 상세페이지</h2>
         </div>
-        <div style="text-align: center;">
+        <div class="centered" style="text-align: center;">
             <product-read-form v-if="product" :product="product"/>
             <p v-else>기다려주세요.</p>
         </div>
         <p></p>
-        <div style="text-align: right;">
-            <router-link :to="{ name: 'ProductModifyPage', params: { productId } }">
+        <div style="text-align: center;">
+            <router-link :to="{ name: 'ProductModiftyPage', params: { productId } }">
                 <v-btn color="gray" dark style="margin: 0px 5px 0px 0px;">수정</v-btn>
             </router-link>
             <router-link :to="{ name: 'ProductListPage' }">
@@ -55,5 +55,9 @@ export default {
 </script>
 
 <style>
-  
+    .centered {
+         display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
