@@ -26,7 +26,7 @@ public class JpaProduct {
 
     @Setter
     private String productName;
-
+    //...
     @Setter
     private Integer productPrice;
 

@@ -41,7 +41,10 @@ public class JpaProductServiceImpl implements JpaProductService{
     
     @Override
     public List<JpaProduct> find(String categoryId){
-          return productRepository.findByCategoryIdLike(categoryId);
+        if(categoryId.equals("all")){
+            return productRepository.findAll(Sort.by(Sort.Direction.DESC, "productId"));
+        }else{
+          return productRepository.findByCategoryIdLike(categoryId);}
 
     }
 

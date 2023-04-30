@@ -5,7 +5,7 @@
             label="category"
             :items="['cook', 'main', 'side']">
           </v-select> -->
-      <select  @change="selectCategory($event)">
+      <select  name="카테고리" class="select" @change="selectCategory($event)">
       <option 
       v-for ="(item, index) in selectList" 
       :key="index"
@@ -23,20 +23,20 @@ const productModule = 'productModule'
 export default {
     data(){
     return{
-      category: "0",
+      //category: "",
       selectList:[
-        {name: "카테고리", value: "0"},
-        {name: "cook1", value: "10"},
+        {name: "카테고리", value: "all"},
+        {name: "cook1", value: "cook1"},
         {name: "cook2", value: "20"},
         {name: "cook3", value: "30"},
       ]
     }
   },
   methods:{
-    selectCategory(event){
-      this.category = event.target.value
+    async selectCategory(event){
+      this.category = await event.target.value
       console.log(this.category)
-      this.requestProductCategoryToSpring(this.category)
+      await this.requestProductCategoryToSpring(this.category)
     },
     ...mapActions(
         productModule, ['requestProductCategoryToSpring']
@@ -49,6 +49,18 @@ export default {
   }
 
 </script>
-<style lang="">
-    
+<style>
+.select {
+  width: 150px;
+  height: 35px;
+  background-size: 20px;
+  padding: 5px 30px 5px 10px;
+  border-radius: 4px;
+  outline: 0 none;
+}
+/* .select option {
+  background: black;
+  color: #fff;
+  padding: 3px 0;
+}     */
 </style>
