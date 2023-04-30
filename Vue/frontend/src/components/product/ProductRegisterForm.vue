@@ -5,38 +5,43 @@
                 <tr>
                     <td>상품명</td>
                     <td>
-                        <input type="text" v-model="Name"/>
+                        <input type="text" v-model="productName"/>
                     </td>
                 </tr>            
                 <tr>
+                    <td>상품 가격</td>
+                    <td>
+                        <input type="text"v-model="productPrice">
+                    </td>
+                </tr>
+                <tr>
                     <td>제조사</td>
                     <td>
-                        <input type="text" v-model="Manufacturer">
+                        <input type="text" v-model="manufacturer">
                     </td>
                 </tr>
                 <tr>
                     <td>제조일자</td>
-                    <td>
-                        <input type="text" v-model="ManufacturedDate">
+                        <input type="text" v-model="mfgDate">
                     </td>
                 </tr>
                 <tr>
                     <td>유통기한</td>
                     <td>
-                        <input style="width:150px; height:30px;" type="text" ExpirationDate1> ~
-                        <input style="width:150px; height:30px;" type="text" ExpirationDate2>
+                        <input style="width:150px; height:30px;" type="text" v-model = "expDate"> ~
+                        <input style="width:150px; height:30px;" type="text" v-model = "expDate">
                     </td>                 
                 </tr>
                 <tr>
                     <td>카테고리</td>
                     <td>
-                        <input type="text" v-model="CategoryName">
+                        <input type="text" v-model="categoryId">
                     </td>
                 </tr>
                 <tr>
-                    <td>상품 가격</td>
+                    <td>제품 세부 정보</td>
                     <td>
-                        <input type="text"v-model="price">
+                        <input type="text" v-model="productDetails">
                     </td>
                 </tr>
             </table>
@@ -55,23 +60,23 @@ export default {
     name: "ProductRegisterForm",
     data () {
         return {
-            Name:'',
-            Manufacturer:'',
-            ManufacturedDate:'',
-            ExpirationDate1:'',
-            ExpirationDate2:'',
-            CategoryName:'',
-            Price:'',
+            productName:'',
+            manufacturer:'',
+            mfgDate:'',
+            expDate:'',
+            categoryId:'',
+            productPrice:1,
+            productDetails:'',
        
         }
     },
     methods: {
         onSubmit () {
-            const { Name, Manufacturer, ManufacturedDate, 
-                ExpirationDate1, ExpirationDate2, CategoryName ,
-                Price } = this            
-            this.$emit('submit', { Name, Manufacturer, ManufacturedDate,
-                 ExpirationDate1, ExpirationDate2, CategoryName ,Price })
+            const { productName, manufacturer, mfgDate, 
+                expDate, categoryId,
+                productPrice, productDetails } = this            
+            this.$emit('submit', { productName, manufacturer, mfgDate,
+                expDate, categoryId ,productPrice, productDetails })
         }
     }
 }
