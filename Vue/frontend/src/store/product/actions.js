@@ -24,7 +24,7 @@ export default {
     },
 
     requestProductCategoryToSpring({commit}, categoryId){
-        return axiosInst.get(`/jpa-product/${categoryId}`)
+        return axiosInst.get(`/jpa-product/category/${categoryId}`)
             .then((res)=>{
                 commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data)
                 console.log(res.data)

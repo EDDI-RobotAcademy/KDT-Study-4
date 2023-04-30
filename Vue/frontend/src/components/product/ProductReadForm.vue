@@ -4,15 +4,15 @@
         <table>
             <thead>
                 <tr>
-                    <td>상품번호</td>
+                    <td>상품번호:</td>
                     <td>
                         <input type="text" :value="product.productId" readonly/>
                     </td>
-                    <td>상품이름</td>
+                    <td>상품이름:</td>
                     <td>
                         <input type="text" :value="product.productName" readonly/>
                     </td>
-                    <td>가격</td>
+                    <td>가격:</td>
                     <td>
                         <input type="text" :value="product.productPrice" readonly/>
                     </td>
@@ -33,23 +33,25 @@
         <table>
             <tfoot>
                 <tr>
-                    <td>제조사</td>
+                    <td>제조사:</td>
                     <td>
                         <input type="text" :value="product.manufacturer" readonly/>
                     </td>
-                    <td>제조일자</td>
+                    <td>제조일자:</td>
                     <td>
                         <input type="text" :value="product.mfgDate" readonly/>
                     </td>
-                    <td>유통기한</td>
+                    <td>유통기한:</td>
                     <td>
                         <input type="text" :value="product.expDate" readonly/>
                     </td>
-                    <td>카테고리</td>
+                </tr>
+                <tr>    
+                    <td>카테고리:</td>
                     <td>
                         <input type="text" :value="product.categoryName" readonly/>
                     </td>
-                    <td>등록일자</td>
+                    <td>등록일자:</td>
                     <td>
                         <input type="text" :value="product.createDate" readonly/>
                     </td>
@@ -74,9 +76,9 @@ export default {
 </script>
    
 <style>
-     input {
+     /* input {
         border: 1px solid black;
-    }
+    } */
     table {
         border-collapse: collapse;
     }
@@ -85,4 +87,7 @@ export default {
         overflow: auto;
         height: 100px;
     } */
+    td, tr {
+        padding: 5px;
+    }
 </style>
