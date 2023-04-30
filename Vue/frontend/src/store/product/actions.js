@@ -32,13 +32,13 @@ export default {
     },
     
     requestCreateProductToSpring({}, payload){
-        const { Name, Manufacturer, ManufacturedDate,
-             ExpirationDate1, ExpirationDate2, CategoryName ,
-             Price } = payload
+        const { productName, manufacturer, mfgDate,
+            expDate, categoryId ,
+            productPrice, productDetails } = payload
 
-             return axiosInst.post('/product-register-page',{ Name, Manufacturer,
-                 ManufacturedDate,ExpirationDate1, ExpirationDate2, CategoryName ,
-                Price })
+             return axiosInst.post('/jpa-product/register',{ productName, manufacturer,
+                mfgDate ,expDate, categoryId ,
+                productPrice, productDetails })
                 .then((res)=> {alert('게시물 등록 성공!')
                     return res
                 })
