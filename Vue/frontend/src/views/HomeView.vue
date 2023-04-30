@@ -1,13 +1,9 @@
 <template>
   <v-container>
-    <div>
-      <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
-
-        <!-- 이 밑으로 페이지 추가 해주시면 됩니다. -->
-        <router-link to="/product-list-page">제품 목록</router-link> |
-      </nav>
+    <div style="text-align: center; margin: 20px;">
+      <router-link to="/product-list-page">
+          <v-btn color="primary" dark style="margin: 0px 5px 0px 0px;">상품 목록 페이지</v-btn>
+      </router-link>
     </div>
   </v-container>
 </template>
@@ -23,3 +19,9 @@
     },
   }
 </script>
+
+<style>
+nav {
+  font-size: 20px;
+}
+</style>
