@@ -3,51 +3,53 @@
         <form @submit.prevent="onSubmit">
             <table>
                 <tr>
-                    <td>상품명</td>
+                    <td class="productForm">상품명</td>
                     <td>
                         <input type="text" v-model="productName"/>
                     </td>
                 </tr>            
                 <tr>
-                    <td>상품 가격</td>
+                    <td class="productForm">상품 가격</td>
                     <td>
-                        <input type="text" v-model="productPrice">
+                        <input type="number" v-model="productPrice">
                     </td>
                 </tr>
                 <tr>
-                    <td>제조사</td>
+                    <td class="productForm">제조사</td>
                     <td>
                         <input type="text" v-model="manufacturer">
                     </td>
                 </tr>
                 <tr>
-                    <td>제조일자</td>
-                        <input type="text" v-model="mfgDate">
+                    <td class="productForm">제조일자</td>
+                    <td>
+                        <input type="date" v-model="mfgDate">
                     </td>
                 </tr>
                 <tr>
-                    <td>유통기한</td>
+                    <td class="productForm">유통기한</td>
                     <td>
-                        <input type="text" v-model = "expDate">
+                        <input type="date" v-model="expDate">
                     </td>                 
                 </tr>
                 <tr>
-                    <td>카테고리</td>
+                    <td class="productForm">카테고리</td>
                     <td>
                         <input type="text" v-model="categoryId">
                     </td>
                 </tr>
                 <tr>
-                    <td>제품 세부 정보</td>
+                    <td class="productForm">상품 정보</td>
                     <td>
-                        <input type="text" v-model="productDetails">
+                        <textarea cols="70" rows="18" v-model="productDetails"/>
                     </td>
                 </tr>
             </table>
-            <div>
-                <button type="submit">등록</button>
+
+            <div class="submitRegister">
+                <v-btn type="submit" color="blue" style="margin: 0px 10px 0px 0px; color: white">등록</v-btn>
                 <router-link :to="{ name: 'ProductListPage' }">
-                    취소
+                    <v-btn>취소</v-btn>
                 </router-link>
             </div>
         </form>
@@ -64,9 +66,8 @@ export default {
             mfgDate:'',
             expDate:'',
             categoryId:'',
-            productPrice:1,
+            productPrice: 0,
             productDetails:'',
-       
         }
     },
     methods: {
@@ -82,19 +83,43 @@ export default {
 </script>
 
 <style scoped>
-    .search {
-  position: relative;
-  width: 300px;
-}
-
 input {
-  width: 100%;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  padding: 8px 10px;
-  font-size: 12px;
+    color: gray;
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 300;
+}
+table {
+    margin-left: 30px;
+}
+tr {
+    height: 50px;
+}
+td.productForm {
+    width: 150px;
+    font-weight: 400;
+}
+textarea {
+    margin-top: 10px;
+    color: gray;
+    border-style: solid;
+    border-color: #bbb;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    resize: none;
+    border-radius: 8px;
+}
+div.submitRegister {
+    margin-left: 280px;
+    padding: 30px;
 }
 
+/*
+사용되지 않는 코드
 img {
   position : absolute;
   width: 17px;
@@ -102,5 +127,9 @@ img {
   right: 12px;
   margin: 0;
 }
-
+.search {
+  position: relative;
+  width: 300px;
+}
+*/
 </style>

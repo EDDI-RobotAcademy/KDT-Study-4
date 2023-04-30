@@ -51,7 +51,7 @@
             </table>
 
             <div class="modifySubmit">
-                <v-btn type="submit" color="blue" style="margin: 0px 10px 0px 0px; color: white;">수정하기</v-btn>
+                <v-btn type="submit" color="blue" style="margin: 0px 10px 0px 0px; color: white;">수정</v-btn>
                 <router-link :to="{ 
                     name: 'ProductReadPage', 
                     params: { productId: product.productId.toString() }
@@ -97,46 +97,47 @@ export default {
 </script>
 
 <style scoped>
-    td.productForm {
-        width: 150px;
-        font-weight: 400;
-    }
-    input.inputValue, input.inputValueProductId {
-        color: gray;
-        border-color: lightgray;
-        width: 50%;
-        padding-left: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        font-weight: 300;
-    }
-    input.inputValueProductId {
-        background-color: rgb(240, 240, 240);
-        width: 50%;
-    }
-    table {
-        margin-left: 30px;
-    }
-    tr {
-        height: 50px;
-    }
-    div.modifySubmit {
-        margin-left: 280px;
-        padding: 30px;
-    }
-    textarea {
-        margin-top: 10px;
-        color: gray;
-        border-style: solid;
-        border-color: lightgray;
-        padding-left: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        resize: none;
-    }
-    span {
-        color: rgb(170, 0, 0);
-        font-size: 14px;
-        margin-left: 3px;
-    }
+td.productForm {
+    width: 150px;
+    font-weight: 400;
+}
+input.inputValue, input.inputValueProductId {
+    font-size: 14px;
+    color: gray;
+    width: 100%;
+    font-weight: 300;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+input.inputValueProductId {
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+}
+table {
+    margin-left: 30px;
+}
+tr {
+    height: 50px;
+}
+div.modifySubmit {
+    margin-left: 280px;
+    padding: 30px;
+}
+textarea {
+    margin-top: 10px;
+    color: gray;
+    border-style: solid;
+    border-color: #bbb;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    resize: none;
+    border-radius: 8px;
+}
+span {
+    color: rgb(170, 0, 0);
+    font-size: 14px;
+    margin-left: 3px;
+}
 </style>
