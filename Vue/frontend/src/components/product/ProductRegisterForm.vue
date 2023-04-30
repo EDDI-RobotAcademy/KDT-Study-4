@@ -36,7 +36,7 @@
                 <tr>
                     <td>상품 가격</td>
                     <td>
-                        <input type="text"v-model="price">
+                        <input type="text"v-model="Price">
                     </td>
                 </tr>
             </table>
