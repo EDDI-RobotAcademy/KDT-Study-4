@@ -45,7 +45,7 @@ export default {
         ),
         async onDelete () {
             await this.requestDeleteProductToSpring(this.productId)
-            await this.$$router.push({ name: 'ProductListPage' })
+            await this.$router.push({ name: 'ProductListPage' })
         }
     },
     created () {
