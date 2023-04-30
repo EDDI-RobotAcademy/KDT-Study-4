@@ -36,7 +36,7 @@ export default {
             expDate, categoryId ,
             productPrice, productDetails } = payload
 
-             return axiosInst.post('/product-register-page',{ productName, manufacturer,
+             return axiosInst.post('/jpa-product/register',{ productName, manufacturer,
                 mfgDate ,expDate, categoryId ,
                 productPrice, productDetails })
                 .then((res)=> {alert('게시물 등록 성공!')
