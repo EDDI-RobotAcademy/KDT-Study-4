@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div>
         <h2>상품등록</h2>
         <product-register-form @submit="onSubmit"/>
@@ -31,6 +31,14 @@ export default {
 }
 </script>
 
-<style lang="">
-    
+<style>
+h2 {
+    padding: 20px;
+    font-weight: 400;
+    padding-left: 30px;
+}
+span {
+    font-size: 14px;
+    color: red;
+}
 </style>

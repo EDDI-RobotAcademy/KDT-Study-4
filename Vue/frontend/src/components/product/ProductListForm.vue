@@ -1,10 +1,10 @@
 <template lang="">
     <div>
-        <h2>제품 목록</h2>
+        <h3>상품 목록</h3>
         <table style="margin: 15px;">
             <tr>
-                <th align="center" width="10%">제품번호</th>
-                <th align="center" width="60%">제품명</th>
+                <th align="center" width="10%">상품번호</th>
+                <th align="center" width="60%">상품명</th>
                 <th align="center" width="20%">가격</th>
                 <th align="center" width="10%">제조사</th>
                 <!--유통기한, 카테고리, 영양정보는 따로 나오게 만들 예정-->
@@ -46,28 +46,13 @@ export default {
 }
 </script>
 
-<style lang="">
-
+<style scoped>
+    h3 {
+        margin-left: 10px;
+        padding: 10px;
+    }
+    th, td {
+        padding: 10px;
+    }
 </style>
-
-<!--
-    **참고**
-@Id
-private Long productId;
-
-// 아래는 모두 생성자 인자
-private String productName;
-private Integer productPrice;
-private String manufacturer;
-private String mfgDate;
-private String expDate;
-private String categoryName;
-private String productDetails;
-
-@CreationTimestamp
-private String createDate;
-
-@UpdateTimestamp
-private String updateDate;
--->
     

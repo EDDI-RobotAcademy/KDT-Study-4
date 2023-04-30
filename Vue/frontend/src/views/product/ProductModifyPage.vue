@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div>
         <h2>상품수정
             <span>* 필수항목</span>
@@ -50,13 +50,13 @@ export default {
 </script>
 
 <style scoped>
-    h2 {
-        padding: 20px;
-        font-weight: 400;
-        padding-left: 30px;
-    }
-    span {
-        font-size: 14px;
-        color: red;
-    }
+h2 {
+    padding: 20px;
+    font-weight: 400;
+    padding-left: 30px;
+}
+span {
+    font-size: 14px;
+    color: red;
+}
 </style>
