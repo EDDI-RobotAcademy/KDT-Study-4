@@ -35,7 +35,11 @@
                 <tr>
                     <td class="productForm">카테고리</td>
                     <td>
-                        <input type="text" v-model="categoryId">
+                        <select v-model="categoryId" @change="selectCategory($event)">
+                            <option name="cook1">cook1</option>
+                            <option name="cook2">cook2</option>
+                            <option name="cook3">cook3</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -71,6 +75,9 @@ export default {
         }
     },
     methods: {
+        selectCategory(event){
+            this.category=event.target.name
+        },
         onSubmit () {
             const { productName, manufacturer, mfgDate, 
                 expDate, categoryId,
@@ -84,6 +91,15 @@ export default {
 
 <style scoped>
 input {
+    color: gray;
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 300;
+}
+select {
     color: gray;
     width: 100%;
     border: 1px solid #bbb;
