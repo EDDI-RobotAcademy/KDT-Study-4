@@ -8,6 +8,7 @@
                     <td>
                         <input type="text" :value="product.productId" readonly/>
                     </td>
+                <tr>    
                     <td>상품이름:</td>
                     <td>
                         <input type="text" :value="product.productName" readonly/>
@@ -16,6 +17,7 @@
                     <td>
                         <input type="text" :value="product.productPrice" readonly/>
                     </td>
+                </tr>    
                 </tr>
             </thead>
         </table>
@@ -76,17 +78,18 @@ export default {
 </script>
    
 <style>
-     /* input {
-        border: 1px solid black;
-    } */
+    /* table {
+            border: 1px solid black;
+        } */
+    textarea {
+        /* border: 1px solid black; */
+        display: block;
+        overflow-y: scroll;
+        background-color: rgb(235, 233, 233);
+    }
     table {
         border-collapse: collapse;
     }
-    /* tbody {
-        display: block;
-        overflow: auto;
-        height: 100px;
-    } */
     td, tr {
         padding: 5px;
     }
